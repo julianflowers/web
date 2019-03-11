@@ -6,10 +6,19 @@
     <description>Recent content in R on greyR - an older persons adventures in R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Widget frame</title>
+      <link>/2019/03/11/widget-frame/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/11/widget-frame/</guid>
+      <description>    library(pacman) p_load(widgetframe, leaflet) l &amp;lt;- leaflet(height=300) %&amp;gt;% addTiles() %&amp;gt;% setView(0,0,1) frameWidget(l)  {&#34;x&#34;:{&#34;url&#34;:&#34;/post/2019-03-11-widget-frame_files/figure-html//widgets/widget_unnamed-chunk-2.html&#34;,&#34;options&#34;:{&#34;xdomain&#34;:&#34;*&#34;,&#34;allowfullscreen&#34;:false,&#34;lazyload&#34;:false}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]} </description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>

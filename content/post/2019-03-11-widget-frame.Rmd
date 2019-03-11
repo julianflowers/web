@@ -1,0 +1,21 @@
+---
+title: Widget frame
+author: Julian Flowers
+date: '2019-03-11'
+slug: widget-frame
+categories:
+  - R
+tags:
+  - widget
+  - leaflet
+---
+```{r}
+library(pacman)
+p_load(widgetframe, leaflet)
+```
+
+```{r}
+l <- leaflet(height=300) %>% addTiles() %>% setView(0,0,1)
+frameWidget(l)
+```
+

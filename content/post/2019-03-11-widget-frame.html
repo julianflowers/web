@@ -1,0 +1,23 @@
+---
+title: Widget frame
+author: Julian Flowers
+date: '2019-03-11'
+slug: widget-frame
+categories:
+  - R
+tags:
+  - widget
+  - leaflet
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
+
+
+<pre class="r"><code>library(pacman)
+p_load(widgetframe, leaflet)</code></pre>
+<pre class="r"><code>l &lt;- leaflet(height=300) %&gt;% addTiles() %&gt;% setView(0,0,1)
+frameWidget(l)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:300px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/post/2019-03-11-widget-frame_files/figure-html//widgets/widget_unnamed-chunk-2.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
