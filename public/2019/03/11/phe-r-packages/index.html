@@ -86,7 +86,7 @@ p_load(cranlogs, tidyverse)
     group_by(month = zoo::as.yearmon(date), package) %&gt;%
     summarise(monthly = sum(count)) %&gt;%
   ggplot(aes(month, monthly, colour = package)) +
-    geom_line(aes(group = package), colour = &quot;grey&quot;, show.legend = FALSE) +
+    #geom_line(aes(group = package), colour = &quot;grey&quot;, show.legend = FALSE) +
     geom_smooth(se = FALSE, aes(group = package), show.legend = FALSE) +
     labs(title = title, y = &quot;Monthly downloads&quot;) +
     zoo::scale_x_yearmon()

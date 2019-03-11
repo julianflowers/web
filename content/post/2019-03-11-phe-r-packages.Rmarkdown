@@ -30,7 +30,7 @@ cran_plot <- function(packages = "fingertipsR", from = Sys.Date() - 365, to = Sy
     group_by(month = zoo::as.yearmon(date), package) %>%
     summarise(monthly = sum(count)) %>%
   ggplot(aes(month, monthly, colour = package)) +
-    geom_line(aes(group = package), colour = "grey", show.legend = FALSE) +
+    #geom_line(aes(group = package), colour = "grey", show.legend = FALSE) +
     geom_smooth(se = FALSE, aes(group = package), show.legend = FALSE) +
     labs(title = title, y = "Monthly downloads") +
     zoo::scale_x_yearmon()
