@@ -46,10 +46,10 @@ cran_plot <- function(packages = "fingertipsR", from = Sys.Date() - 365, to = Sy
 ```r
 #cranlogs::cran_downloads("fingertipsR", when = "last-day")
 
-cran_plot(packages = c("fingertipsR", "fingertipscharts", "PHEindicatormethods"), title = "Smoothed daily downloads") +
+cran_plot(packages = c("fingertipsR", "fingertipscharts", "PHEindicatormethods"), title = "Smoothed monthly downloads") +
   facet_wrap(~package) +
   scale_y_log10()
 ```
 
-<img src="2019-03-11-phe-r-packages_files/figure-html/plot-1.png" width="672" />
+<img src="/post/2019-03-11-phe-r-packages_files/figure-html/plot-1.png" width="672" />
 

@@ -45,7 +45,7 @@ cran_plot <- function(packages = "fingertipsR", from = Sys.Date() - 365, to = Sy
 
 #cranlogs::cran_downloads("fingertipsR", when = "last-day")
 
-cran_plot(packages = c("fingertipsR", "fingertipscharts", "PHEindicatormethods"), title = "Smoothed daily downloads") +
+cran_plot(packages = c("fingertipsR", "fingertipscharts", "PHEindicatormethods"), title = "Smoothed monthly downloads") +
   facet_wrap(~package) +
   scale_y_log10()
 ```
