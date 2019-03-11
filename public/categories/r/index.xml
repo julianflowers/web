@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>PHE R packages</title>
+      <link>/2019/03/11/phe-r-packages/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/11/phe-r-packages/</guid>
+      <description>As part of our open data and data science strategy we create R packages, three of which we have made widely available through [CRAN]().
+The most popular is fingertipsR which reads data from Fingertips via the fingertips API.
+library(pacman) p_load(cranlogs, tidyverse)  cran_plot &amp;lt;- function(packages = &amp;quot;fingertipsR&amp;quot;, from = Sys.Date() - 365, to = Sys.Date(), title = &amp;quot;Plot&amp;quot;){ plot &amp;lt;- cranlogs::cran_downloads(packages = packages, to = to, from = from) %&amp;gt;% ggplot(aes(date, count, colour = package)) + geom_line(aes(group = package), colour = &amp;quot;grey&amp;quot;, show.</description>
+    </item>
+    
+    <item>
       <title>Widget frame</title>
       <link>/2019/03/11/widget-frame/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>

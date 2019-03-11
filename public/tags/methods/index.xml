@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Science on greyR - an older persons adventures in R</title>
-    <link>/categories/data-science/</link>
-    <description>Recent content in Data Science on greyR - an older persons adventures in R</description>
+    <title>Methods on greyR - an older persons adventures in R</title>
+    <link>/tags/methods/</link>
+    <description>Recent content in Methods on greyR - an older persons adventures in R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/methods/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>As part of our open data and data science strategy we create R packages, three of which we have made widely available through [CRAN]().
 The most popular is fingertipsR which reads data from Fingertips via the fingertips API.
 library(pacman) p_load(cranlogs, tidyverse)  cran_plot &amp;lt;- function(packages = &amp;quot;fingertipsR&amp;quot;, from = Sys.Date() - 365, to = Sys.Date(), title = &amp;quot;Plot&amp;quot;){ plot &amp;lt;- cranlogs::cran_downloads(packages = packages, to = to, from = from) %&amp;gt;% ggplot(aes(date, count, colour = package)) + geom_line(aes(group = package), colour = &amp;quot;grey&amp;quot;, show.</description>
-    </item>
-    
-    <item>
-      <title>First post</title>
-      <link>/2019/03/10/first-post/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/2019/03/10/first-post/</guid>
-      <description>First foray blah</description>
     </item>
     
   </channel>
