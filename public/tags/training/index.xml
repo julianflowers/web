@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Training on greyR - an older persons adventures in R</title>
+    <link>/tags/training/</link>
+    <description>Recent content in Training on greyR - an older persons adventures in R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/training/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First post</title>
+      <link>/2019/03/10/first-post/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/10/first-post/</guid>
+      <description>First foray blah</description>
+    </item>
+    
+  </channel>
+</rss>
