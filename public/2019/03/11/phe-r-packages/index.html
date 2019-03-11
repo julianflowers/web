@@ -83,22 +83,27 @@ p_load(cranlogs, tidyverse)
 <pre><code class="language-r">cran_plot &lt;- function(packages = &quot;fingertipsR&quot;, from = Sys.Date() - 365, to = Sys.Date(), title = &quot;Plot&quot;){
   
   plot &lt;- cranlogs::cran_downloads(packages = packages, to = to, from = from) %&gt;%
-  ggplot(aes(date, count, colour = package)) +
+    group_by(month = zoo::as.yearmon(date), package) %&gt;%
+    summarise(monthly = sum(count)) %&gt;%
+  ggplot(aes(month, monthly, colour = package)) +
     geom_line(aes(group = package), colour = &quot;grey&quot;, show.legend = FALSE) +
     geom_smooth(se = FALSE, aes(group = package), show.legend = FALSE) +
-    labs(title = title, y = &quot;Daily downloads&quot;) 
+    labs(title = title, y = &quot;Monthly downloads&quot;) +
+    zoo::scale_x_yearmon()
   
   plot
   
 }
 </code></pre>
 
-<pre><code class="language-r">cran_plot(packages = c(&quot;fingertipsR&quot;, &quot;fingertipscharts&quot;, &quot;PHEindicatormethods&quot;), title = &quot;Smoothed daily downloads&quot;) +
+<pre><code class="language-r">#cranlogs::cran_downloads(&quot;fingertipsR&quot;, when = &quot;last-day&quot;)
+
+cran_plot(packages = c(&quot;fingertipsR&quot;, &quot;fingertipscharts&quot;, &quot;PHEindicatormethods&quot;), title = &quot;Smoothed daily downloads&quot;) +
   facet_wrap(~package) +
   scale_y_log10()
 </code></pre>
 
-<p><img src="/post/2019-03-11-phe-r-packages_files/figure-html/plot-1.png" width="672" /></p>
+<p><img src="2019-03-11-phe-r-packages_files/figure-html/plot-1.png" width="672" /></p>
 
     </div>
   </article>
