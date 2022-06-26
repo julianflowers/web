@@ -1,0 +1,13 @@
+---
+title: Test
+author: Package Build
+date: '2022-06-26'
+slug: test
+categories: []
+tags: []
+---
+
+```{r}
+mtcars
+```
+
