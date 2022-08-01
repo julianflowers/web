@@ -18,7 +18,12 @@ paper <- S2_paper("arXiv:1705.10311", include_unknown_refs = TRUE)
 
 
 
-semanticscholar::S2_search_papers(keyword = "large herbivore climate change", offset = 101, limit = 100)
+ss <- semanticscholar::S2_search_papers(keyword = "large herbivore climate change", offset = 1, limit = 100)
+
+ss$data$paperId[4]
+
+S2_paper("466446d58e6e5e97e447e88dd9d4b05d4d4b4229")
+
 
 # authors on that paper
 authors <- paper$authors
