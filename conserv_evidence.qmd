@@ -1,0 +1,57 @@
+---
+title: "What works in conservation"
+author: "Julian Flowers"
+date: "`r Sys.Date()`"
+format: html
+editor: visual
+execute:
+    cache: true
+    messages: false
+    echo: false
+---
+
+## Wht works in conseravtion?
+
+Description
+
+## Purpose of blog
+
+Trying to marshall resources in to a simple table for further analysis
+
+## Method
+
+Using web-scraping
+
+## Here's how...
+
+Insert image
+
+There are currently 3xxx conservation actions listed on the conseravtion evidence website.
+
+Each action has its own url (webpage) of the form <https://conservationevidence.com/actions/xxx> =\> there are 3xxx pages of evidence.
+
+Each page has a number of elements:
+
+-   Title
+
+-   Effectiveness category
+
+-   Number of studies
+
+    -   Key messages
+
+-   Background synopsis
+
+There are also a series of pages
+
+```{r}
+
+library(tidyverse)
+library(gt)
+
+ci <- read_csv("~/Dropbox/Mac (2)/Desktop/MOD007045/conservation_interventions.csv", show_col_types = FALSE)
+
+head(ci, 20) |>
+  gt::gt()
+
+```

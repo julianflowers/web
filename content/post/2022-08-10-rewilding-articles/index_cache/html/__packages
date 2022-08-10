@@ -1,0 +1,16 @@
+myScrapers
+pacman
+quanteda.textmodels
+quanteda.textstats
+guardianapi
+lubridate
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
+entity

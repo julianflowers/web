@@ -1,0 +1,67 @@
+---
+title: Rewilding articles
+author: Julian Flowers
+date: '2022-08-10'
+slug: rewilding-articles
+categories:
+  - ecology
+  - rewilding
+tags:
+  - ecology
+params:
+    search: "rewilding"
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, cache=TRUE, message = FALSE, warning = FALSE) 
+library(myScrapers)
+
+library(pacman)
+p_load(quanteda.textmodels, quanteda.textstats, guardianapi, myScrapers, lubridate, tidyverse)
+pacman::p_load_gh("trinker/entity")
+```
+
+
+
+## Search Guardian for articles on `r params$search`
+
+
+```{r}
+
+
+guardianapi::gu_api_key(check_env = TRUE)
+
+
+last_year <- guardianapi::gu_content(query = params$search, from_date = today() - days(365), to_date = today())
+
+articles <- last_year %>%
+  mutate(date = ymd(str_sub(web_publication_date, 1, 10))) %>%
+  select(date, headline, short_url, section_name, body) %>%
+  filter(section_name == "Environment") |>
+  DT::datatable(escape = FALSE, 
+                editable = TRUE, 
+                extensions = c("Responsive", 'Select', 'Buttons'),
+                options = list(
+    select = list(style = 'os', items = 'row'),
+    dom = 'Blfrtip',
+    rowId = 0,
+    buttons = c('selectAll', 'selectNone', 'selectRows', 'selectColumns'), 
+    selection = 'none'
+  ))
+
+articles
+```
+
+```{r, eval = FALSE}
+
+selection = 'none'
+                extensions = "Buttons", 
+                escape = FALSE, 
+                options = list(
+                  dom = "Bfrtip", 
+                  buttons = c("csv", "excel"), 
+                  pageLength = 50
+                )
+```
+
