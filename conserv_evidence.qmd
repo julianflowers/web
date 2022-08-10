@@ -10,13 +10,13 @@ execute:
     echo: false
 ---
 
-## Wht works in conseravtion?
+## What works in conseravtion?
 
 Description
 
 ## Purpose of blog
 
-Trying to marshall resources in to a simple table for further analysis
+Trying to oragnise resources in to a simple table for further analysis
 
 ## Method
 
