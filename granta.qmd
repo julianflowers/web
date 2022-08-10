@@ -1,0 +1,65 @@
+---
+title: "River Granta"
+format: html
+editor: visual
+execute: 
+  cache: true
+  echo: false
+  message: false
+  warning: false
+---
+
+## Course of the River Granta
+
+```{r}
+#| echo: false
+#| message: false
+#| label: libraries
+#| results: hide
+
+library(pacman)
+ 
+p_load(tidyverse, sf, here, tmap, leaflet, leaflet.extras)
+
+p <- here("/Users/julianflowers/Dropbox/My Mac (Julians-MBP-2)/Downloads/oprvrs_essh_gb/data")
+
+f <- list.files(p, "shp", full.names = T)
+
+rivers <- st_read(f[2])
+
+```
+
+```{r}
+
+#| echo: false
+#| fig-cap: "Course of the River Granta"
+
+
+library(ggspatial)
+
+cam <- rivers |>
+  filter(str_detect(name1, "Granta|River Cam|River Bourn"), 
+         !str_detect(name1, "Camel")) 
+
+  
+st_geometry(cam) |>
+    st_transform(crs = 4326)
+  
+cam %>% 
+  ggplot() +
+  annotation_map_tile(zoomin = 0) +
+  geom_sf(colour = "skyblue") +
+  coord_sf(crs = 4326, xlim = c(.1, 0.37), ylim = c(52.03, 52.2)) +
+  theme_void()
+
+```
+
+```{r}
+#| eval: false
+
+leaflet() %>% 
+    addProviderTiles(providers$Esri.WorldStreetMap) %>%
+  addResetMapButton() %>%
+  addSearchOSM()
+
+```
